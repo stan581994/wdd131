@@ -1,6 +1,3 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap');
-
 /* CSS Reset and Base Styles */
 * {
     margin: 0;
@@ -122,6 +119,29 @@ main {
     padding: 0;
 }
 
+/* Hobby section styling */
+.hobby {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 1rem 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.hobby img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hobby p {
+    margin: 0;
+    font-style: italic;
+}
+
 /* Projects card specific styling */
 .projects .card-content {
     padding: 1.5rem;
@@ -132,6 +152,46 @@ main {
     line-height: 1.8;
     margin: 0;
     padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.projects h3 {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+    color: #2c5282;
+}
+
+.resources-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.resources-list li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.resources-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2c5282;
+    font-weight: bold;
+}
+
+.resources-list a {
+    color: #2c5282;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.resources-list a:hover {
+    color: #1a365d;
+    text-decoration: underline;
 }
 
 /* Footer Styles */
@@ -164,6 +224,16 @@ footer p {
     }
     
     .about-me img {
+        margin-bottom: 1rem;
+    }
+    
+    /* Stack hobby content vertically on small screens */
+    .hobby {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hobby img {
         margin-bottom: 1rem;
     }
 }
