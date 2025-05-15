@@ -10,7 +10,7 @@
         flex-direction: row;
     }
     
-    header h2 {
+    header h1 {
         margin-bottom: 0;
     }
     
@@ -35,9 +35,10 @@
     }
     
     /* Main Content Adjustments */
-    main h1 {
+    main h2 {
         font-size: 2.2rem;
         margin: 2rem 0;
+        grid-column: 1 / -1; /* Make h2 span all columns */
     }
     
     /* Figure Grid Layout - Multiple Columns */
