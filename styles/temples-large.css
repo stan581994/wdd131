@@ -1,0 +1,63 @@
+/* Temples Page Styles - Large Screens */
+
+@media screen and (min-width: 768px) {
+    /* Header Adjustments */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        flex-direction: row;
+    }
+    
+    header h2 {
+        margin-bottom: 0;
+    }
+    
+    /* Hide Hamburger Button on Large Screens */
+    #hamburgerBtn {
+        display: none;
+    }
+    
+    /* Navigation Adjustments for Large Screens */
+    #primaryNav {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        margin-left: auto;
+        padding: 0;
+        margin-top: 0;
+    }
+    
+    #primaryNav a {
+        border-bottom: none;
+        width: auto;
+    }
+    
+    /* Main Content Adjustments */
+    main h1 {
+        font-size: 2.2rem;
+        margin: 2rem 0;
+    }
+    
+    /* Figure Grid Layout - Multiple Columns */
+    main {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    /* Figure Grid Layout - 3 Columns for Large Screens */
+    main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    /* Figure Grid Layout - 4 Columns for Extra Large Screens */
+    main {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
