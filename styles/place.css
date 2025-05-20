@@ -168,6 +168,19 @@ main {
 .condition {
     font-size: var(--font-small);
     margin-top: var(--spacing-xs);
+    position: relative;
+}
+
+.condition::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 1px;
 }
 
 .weather-details {
