@@ -1,5 +1,23 @@
 /* Place Page Specific Styles */
 
+/* Global CSS Variables */
+:root {
+    --primary-color: #1a365d;
+    --secondary-color: #2c5282;
+    --text-color: #4a5568;
+    --light-bg: rgba(255, 255, 255, 0.7);
+    --card-radius: 8px;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --spacing-xs: 0.3rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 0.8rem;
+    --spacing-lg: 1.5rem;
+    --font-small: 0.9rem;
+    --font-medium: 1.1rem;
+    --font-large: 1.3rem;
+    --font-xl: 2rem;
+}
+
 /* Main Layout */
 main {
     position: relative;
@@ -36,18 +54,18 @@ main {
     top: 40px;
     left: 50px;
     width: 280px;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 0.8rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--light-bg);
+    padding: var(--spacing-md);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
     z-index: 10;
 }
 
 .data-section h2 {
     text-align: center;
-    color: #1a365d;
-    margin-bottom: 0.5rem;
-    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-large);
 }
 
 .data-list {
@@ -60,7 +78,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.3rem 0;
+    padding: var(--spacing-xs) 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -70,13 +88,13 @@ main {
 
 .data-label {
     font-weight: bold;
-    color: #2c5282;
-    font-size: 0.9rem;
+    color: var(--secondary-color);
+    font-size: var(--font-small);
 }
 
 .data-value {
-    color: #4a5568;
-    font-size: 0.9rem;
+    color: var(--text-color);
+    font-size: var(--font-small);
     text-align: right;
 }
 
@@ -86,18 +104,26 @@ main {
     top: 150px;
     right: 50px;
     width: 280px;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 0.8rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--light-bg);
+    padding: var(--spacing-md);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
     z-index: 10;
 }
 
 .weather-section h2 {
     text-align: center;
-    color: #1a365d;
-    margin-bottom: 0.5rem;
-    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-large);
+}
+
+/* Weather icon */
+.weather-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto var(--spacing-sm);
+    display: block;
 }
 
 .weather-container {
@@ -106,18 +132,18 @@ main {
 }
 
 .weather-card {
-    background: linear-gradient(135deg, rgba(44, 82, 130, 0.7), rgba(26, 54, 93, 0.7));
+    background: linear-gradient(135deg, rgba(44,     82, 130, 0.7), rgba(26, 54, 93, 0.7));
     color: white;
-    padding: 0.8rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: var(--spacing-md);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
 }
 
 .weather-card h3 {
     color: white;
     text-align: center;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-medium);
 }
 
 .weather-info {
@@ -129,19 +155,19 @@ main {
 .temperature {
     width: 100%;
     text-align: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--spacing-sm);
 }
 
 .temp-value {
-    font-size: 2rem;
+    font-size: var(--font-xl);
     font-weight: bold;
     margin: 0;
     line-height: 1;
 }
 
 .condition {
-    font-size: 0.9rem;
-    margin-top: 0.2rem;
+    font-size: var(--font-small);
+    margin-top: var(--spacing-xs);
 }
 
 .weather-details {
@@ -149,8 +175,8 @@ main {
 }
 
 .weather-details p {
-    margin: 0.3rem 0;
-    font-size: 0.9rem;
+    margin: var(--spacing-xs) 0;
+    font-size: var(--font-small);
 }
 
 
@@ -178,6 +204,12 @@ main {
         width: 90%;
         margin: 20px auto;
         background-color: rgba(255, 255, 255, 0.9);
+    }
+    
+    /* Smaller weather icon on mobile */
+    .weather-icon {
+        width: 40px;
+        height: 40px;
     }
     
     .data-section {
