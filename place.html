@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 131 – The Philippines - Information about the beautiful country of the Philippines">
+    <meta name="author" content="Steven Tan">
+    <title>The Philippines - WDD 131</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/windchill.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>The Philippines</h1>
+    </header>
+    
+    <main>
+        <section class="hero-section">
+            <div class="hero-image">
+                <!-- Placeholder for Philippine carabao image -->
+                <img src="images/Philippines-Carabao.webp" alt="Philippine Carabao (Placeholder)">
+            </div>
+        </section>
+        
+        <section class="data-section">
+            <h2>Country Information</h2>
+            <div class="data-list">
+                <div class="data-item">
+                    <span class="data-label">Population:</span>
+                    <span class="data-value">113.9 million</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Capital:</span>
+                    <span class="data-value">Manila</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Languages:</span>
+                    <span class="data-value">Filipino, English</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Currency:</span>
+                    <span class="data-value">Philippine Peso (₱)</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Time Zone:</span>
+                    <span class="data-value">GMT+8</span>
+                </div>
+               
+            </div>
+        </section>
+        
+        <section class="weather-section">
+            <h2>Current Weather</h2>
+            <div class="weather-container">
+                <div class="weather-card">
+                    <h3>Manila</h3>
+                    <div class="weather-info">
+                        <div class="temperature">
+                            <p class="temp-value">32°C</p>
+                            <p class="condition">Partly Cloudy</p>
+                        </div>
+                        <div class="weather-details">
+                            <p><strong>Wind:</strong> 15 km/h</p>
+                            <p><strong>Wind Chill:</strong> 34°C</p>
+                            <p><strong>Humidity:</strong> 75%</p>
+                            <p><strong>Precipitation:</strong> 30%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Steven Tan. Philippines</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

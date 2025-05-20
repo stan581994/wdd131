@@ -1,0 +1,204 @@
+/* Place Page Specific Styles */
+
+/* Main Layout */
+main {
+    position: relative;
+    padding: 0;
+    max-width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Data Section */
+.data-section {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    width: 280px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0.8rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.data-section h2 {
+    text-align: center;
+    color: #1a365d;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.data-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.data-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.data-item:last-child {
+    border-bottom: none;
+}
+
+.data-label {
+    font-weight: bold;
+    color: #2c5282;
+    font-size: 0.9rem;
+}
+
+.data-value {
+    color: #4a5568;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+/* Weather Section */
+.weather-section {
+    position: absolute;
+    top: 150px;
+    right: 50px;
+    width: 280px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0.8rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.weather-section h2 {
+    text-align: center;
+    color: #1a365d;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.weather-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.weather-card {
+    background: linear-gradient(135deg, rgba(44, 82, 130, 0.7), rgba(26, 54, 93, 0.7));
+    color: white;
+    padding: 0.8rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.weather-card h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.temperature {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.temp-value {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1;
+}
+
+.condition {
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+}
+
+.weather-details {
+    width: 100%;
+}
+
+.weather-details p {
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+}
+
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1200px) {
+    .data-section, .weather-section {
+        width: 260px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .data-section, .weather-section {
+        width: 240px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-section {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .data-section, .weather-section {
+        position: static;
+        width: 90%;
+        margin: 20px auto;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .data-section {
+        margin-top: -50px;
+        z-index: 20;
+        width: 90%;
+        max-width: 400px;
+    }
+    
+    .weather-info {
+        flex-direction: column;
+    }
+    
+    .temperature, .weather-details {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Footer adjustment */
+footer {
+    position: relative;
+    z-index: 30;
+}
