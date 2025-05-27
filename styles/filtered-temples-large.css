@@ -1,0 +1,114 @@
+/* Filtered Temples Page Styles - Large Screens */
+
+@media screen and (min-width: 768px) {
+    /* Header Adjustments */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        flex-direction: row;
+    }
+    
+    header h1 {
+        margin-bottom: 0;
+    }
+    
+    /* Hide Hamburger Button on Large Screens */
+    #hamburgerBtn {
+        display: none;
+    }
+    
+    /* Navigation Adjustments for Large Screens */
+    #primaryNav {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        margin-left: auto;
+        padding: 0;
+        margin-top: 0;
+    }
+    
+    #primaryNav a {
+        border-bottom: none;
+        width: auto;
+    }
+    
+    /* Main Content Adjustments */
+    main h2 {
+        font-size: 2.2rem;
+        margin: 2rem 0;
+        grid-column: 1 / -1; /* Make h2 span all columns */
+    }
+    
+    /* Filter Controls for Large Screens */
+    .filter-controls {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    /* Temple Card Grid Layout - Multiple Columns */
+    main {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+        gap: 2.5rem; /* Increased gap */
+        padding: 2rem; /* Increased padding */
+        max-width: 1200px; /* Increased max-width */
+    }
+    
+    /* Larger temple cards for medium screens */
+    .temple-card {
+        min-height: 450px; /* Increased minimum height */
+    }
+    
+    .temple-card img {
+        height: 280px; /* Increased image height */
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    /* Temple Card Grid Layout - 3 Columns for Large Screens */
+    main {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1400px; /* Increased max-width */
+    }
+    
+    /* Larger temple cards for large screens */
+    .temple-card {
+        min-height: 480px; /* Increased minimum height */
+    }
+    
+    .temple-card img {
+        height: 300px; /* Increased image height */
+    }
+    
+    .temple-name {
+        font-size: 1.5rem; /* Increased font size */
+    }
+    
+    .temple-location {
+        font-size: 1.2rem; /* Increased font size */
+    }
+    
+    .temple-dedicated, .temple-area {
+        font-size: 1.1rem; /* Increased font size */
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    /* Temple Card Grid Layout - 4 Columns for Extra Large Screens */
+    main {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1800px; /* Increased max-width */
+        gap: 3rem; /* Increased gap */
+    }
+    
+    /* Larger temple cards for extra large screens */
+    .temple-card {
+        min-height: 500px; /* Increased minimum height */
+    }
+    
+    .temple-card img {
+        height: 320px; /* Increased image height */
+    }
+}

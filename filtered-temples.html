@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 131 – Filtered Temple Album - A collection of temple images from around the world">
+    <meta name="author" content="Steven Tan">
+    <title>Filtered Temple Album - WDD 131</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <link rel="stylesheet" href="styles/filtered-temples-large.css">
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/filtered-temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Filtered Temple Album</h1>
+        <button id="hamburgerBtn" aria-expanded="false" aria-controls="primaryNav">☰</button>
+        <nav id="primaryNav">
+            <a href="index.html">Home</a>
+            <a href="temples.html">All Temples</a>
+            <a href="#">Old</a>
+            <a href="#">New</a>
+            <a href="#">Large</a>
+            <a href="#">Small</a>
+        </nav>
+    </header>
+    <main id="templeCards">
+        <h2>Temple Images</h2>
+        <!-- Temple cards will be dynamically generated here using JavaScript -->
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Steven Tan. Philippines</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
