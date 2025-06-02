@@ -87,70 +87,13 @@ const temples = [
 function displayTemples(templeList) {
   const templeCardsContainer = document.getElementById('templeCards');
   
-  // Clear existing content except the h2
+  // Get existing elements
   const heading = templeCardsContainer.querySelector('h2');
+  const filterControls = templeCardsContainer.querySelector('.filter-controls');
+  
+  // Clear existing content except the h2 and filter controls
   templeCardsContainer.innerHTML = '';
   templeCardsContainer.appendChild(heading);
-  
-  // Create filter controls
-  const filterControls = document.createElement('div');
-  filterControls.className = 'filter-controls';
-  
-  // Add filter buttons
-  const allButton = document.createElement('button');
-  allButton.textContent = 'All Temples';
-  allButton.classList.add('active');
-  allButton.addEventListener('click', () => {
-    setActiveButton(allButton);
-    displayTemples(temples);
-  });
-  
-  const oldButton = document.createElement('button');
-  oldButton.textContent = 'Pre-2000 Temples';
-  oldButton.addEventListener('click', () => {
-    setActiveButton(oldButton);
-    const oldTemples = temples.filter(temple => {
-      const dedicatedYear = parseInt(temple.dedicated.split(', ')[0]);
-      return dedicatedYear < 2000;
-    });
-    displayTemples(oldTemples);
-  });
-  
-  const newButton = document.createElement('button');
-  newButton.textContent = 'Post-2000 Temples';
-  newButton.addEventListener('click', () => {
-    setActiveButton(newButton);
-    const newTemples = temples.filter(temple => {
-      const dedicatedYear = parseInt(temple.dedicated.split(', ')[0]);
-      return dedicatedYear >= 2000;
-    });
-    displayTemples(newTemples);
-  });
-  
-  const largeButton = document.createElement('button');
-  largeButton.textContent = 'Large Temples (>50,000 sq ft)';
-  largeButton.addEventListener('click', () => {
-    setActiveButton(largeButton);
-    const largeTemples = temples.filter(temple => temple.area > 50000);
-    displayTemples(largeTemples);
-  });
-  
-  const smallButton = document.createElement('button');
-  smallButton.textContent = 'Small Temples (<50,000 sq ft)';
-  smallButton.addEventListener('click', () => {
-    setActiveButton(smallButton);
-    const smallTemples = temples.filter(temple => temple.area <= 50000);
-    displayTemples(smallTemples);
-  });
-  
-  // Add buttons to filter controls
-  filterControls.appendChild(allButton);
-  filterControls.appendChild(oldButton);
-  filterControls.appendChild(newButton);
-  filterControls.appendChild(largeButton);
-  filterControls.appendChild(smallButton);
-  
-  // Add filter controls to the container
   templeCardsContainer.appendChild(filterControls);
   
   // Loop through each temple and create a card
@@ -218,13 +161,11 @@ function setActiveButton(activeButton) {
 document.addEventListener('DOMContentLoaded', function() {
   // Get elements
   const hamburgerButton = document.getElementById('hamburgerBtn');
-  const primaryNav = document.getElementById('primaryNav');
   
   // Toggle menu function
   function toggleMenu() {
-    // Toggle the 'open' class on both the button and the menu
+    // Toggle the 'open' class on the button
     hamburgerButton.classList.toggle('open');
-    primaryNav.classList.toggle('open');
     
     // Change button text based on state
     const isOpen = hamburgerButton.classList.contains('open');
@@ -237,15 +178,46 @@ document.addEventListener('DOMContentLoaded', function() {
   // Add click event to hamburger button
   hamburgerButton.addEventListener('click', toggleMenu);
   
-  // Close menu when window is resized to larger than mobile breakpoint
-  window.addEventListener('resize', function() {
-    if (window.innerWidth >= 768 && hamburgerButton.classList.contains('open')) {
-      // Reset menu state
-      hamburgerButton.classList.remove('open');
-      primaryNav.classList.remove('open');
-      hamburgerButton.textContent = '☰';
-      hamburgerButton.setAttribute('aria-expanded', false);
-    }
+  // Set up filter button event listeners
+  const allButton = document.getElementById('allButton');
+  const oldButton = document.getElementById('oldButton');
+  const newButton = document.getElementById('newButton');
+  const largeButton = document.getElementById('largeButton');
+  const smallButton = document.getElementById('smallButton');
+  
+  allButton.addEventListener('click', () => {
+    setActiveButton(allButton);
+    displayTemples(temples);
+  });
+  
+  oldButton.addEventListener('click', () => {
+    setActiveButton(oldButton);
+    const oldTemples = temples.filter(temple => {
+      const dedicatedYear = parseInt(temple.dedicated.split(', ')[0]);
+      return dedicatedYear < 2000;
+    });
+    displayTemples(oldTemples);
+  });
+  
+  newButton.addEventListener('click', () => {
+    setActiveButton(newButton);
+    const newTemples = temples.filter(temple => {
+      const dedicatedYear = parseInt(temple.dedicated.split(', ')[0]);
+      return dedicatedYear >= 2000;
+    });
+    displayTemples(newTemples);
+  });
+  
+  largeButton.addEventListener('click', () => {
+    setActiveButton(largeButton);
+    const largeTemples = temples.filter(temple => temple.area > 50000);
+    displayTemples(largeTemples);
+  });
+  
+  smallButton.addEventListener('click', () => {
+    setActiveButton(smallButton);
+    const smallTemples = temples.filter(temple => temple.area <= 50000);
+    displayTemples(smallTemples);
   });
   
   // Display all temples when the page loads

@@ -6,12 +6,17 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1.5rem 1rem; /* Consistent padding */
+    background-color: #1a365d; /* Ensure consistent background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
 }
 
 header h1 {
     color: white;
-    font-size: 1.8rem;
+    font-size: 2rem; /* Increased font size */
     margin-bottom: 1rem;
+    letter-spacing: 0.5px; /* Improved typography */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Add subtle text shadow for depth */
 }
 
 /* Hamburger Menu Styles */
@@ -19,7 +24,7 @@ header h1 {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.4); /* Darker background for better contrast with white text */
     color: white;
     border: none;
     font-size: 1.5rem;
@@ -31,11 +36,11 @@ header h1 {
 }
 
 #hamburgerBtn:hover, #hamburgerBtn:focus {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.6); /* Darker background on hover for better contrast with white text */
 }
 
 #hamburgerBtn.open {
-    background: #4299e1;
+    background: #2c5282; /* Darker blue for better contrast with white text */
 }
 
 /* Navigation Styles for Mobile */
@@ -46,6 +51,8 @@ header h1 {
     background-color: #1a365d;
     padding: 1rem 0;
     margin-top: 0.5rem;
+    border-radius: 0 0 8px 8px; /* Rounded corners at bottom */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
 }
 
 #primaryNav.open {
@@ -57,6 +64,14 @@ header h1 {
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    font-weight: 500; /* Slightly bolder text */
+    letter-spacing: 0.5px; /* Improved typography */
+}
+
+#primaryNav a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
 #primaryNav a:last-child {
@@ -65,27 +80,46 @@ header h1 {
 
 /* Main Content Styles */
 main {
-    max-width: 1000px;
+    max-width: 1200px; /* Increased max-width for better layout */
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1rem; /* Reduced padding to accommodate filter controls */
     display: block; /* Override grid from base.css */
     text-align: center; /* Center align content */
 }
 
 main h2 {
     text-align: center;
-    margin: 1.5rem 0;
+    margin: 0.5rem 0 1.5rem; /* Reduced margins to accommodate filter controls */
     color: #1a365d;
-    font-size: 1.8rem;
+    font-size: 2rem; /* Increased font size for better hierarchy */
     grid-column: 1 / -1; /* Make h2 span all columns */
+    position: relative; /* For decorative elements */
+    padding-bottom: 0.5rem; /* Space for underline */
 }
 
-/* Figure Grid Layout */
+main h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #1a365d;
+    border-radius: 2px;
+}
+
+/* Main Content Layout */
 main {
+    display: block; /* Override grid layout */
+    padding: 1.5rem; /* Consistent padding */
+}
+
+/* Temple Cards Grid Layout */
+#templeCards {
     display: grid;
     grid-template-columns: 1fr; /* Single column for mobile */
-    gap: 1.5rem;
-    padding: 1rem;
+    gap: 2rem; /* Increased gap for better spacing */
 }
 
 /* Temple Card Styles */
@@ -94,11 +128,12 @@ main {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     height: 100%;
     min-height: 400px; /* Minimum height for cards */
+    border-bottom: 4px solid #1a365d; /* Consistent border style with filter controls */
 }
 
 .temple-card:hover {
@@ -117,7 +152,7 @@ main {
     padding: 1.5rem; /* Increased padding */
     text-align: center;
     background-color: #f8f9fa;
-    border-top: 2px solid #e9ecef;
+    border-top: 2px solid #1a365d; /* Match the theme color for consistency */
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -132,14 +167,14 @@ main {
 }
 
 .temple-location {
-    color: #4a5568;
+    color: #2d3748; /* Darker color for better contrast */
     margin-bottom: 0.8rem; /* Increased margin */
     font-style: italic;
     font-size: 1.1rem; /* Increased font size */
 }
 
 .temple-dedicated, .temple-area {
-    color: #718096;
+    color: #2d3748; /* Darker color for better contrast */
     font-size: 1rem; /* Increased font size */
     margin-bottom: 0.5rem; /* Increased margin */
 }
@@ -147,26 +182,35 @@ main {
 /* Filter Controls */
 .filter-controls {
     display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    margin-bottom: 2.5rem;
-    padding: 1.5rem;
+    flex-direction: row; /* Horizontal layout */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: center; /* Center buttons */
+    gap: 0.8rem; /* Smaller gap for horizontal layout */
+    margin: 1.5rem auto 2.5rem; /* Add top margin, keep bottom margin */
+    padding: 1rem; /* Reduced padding */
     background-color: #f0f4f8;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Full width on mobile */
+    border-bottom: 4px solid #1a365d; /* Bottom border instead of left */
+    grid-column: 1 / -1; /* Make it span all columns */
+    width: 100%; /* Full width */
 }
 
 .filter-controls button {
-    padding: 0.8rem 1.2rem;
+    padding: 0.7rem 1rem; /* Slightly smaller padding */
     background-color: #2c5282;
     color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 1.1rem;
+    font-size: 1rem; /* Slightly smaller font */
     font-weight: 500;
     letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    flex: 0 1 auto; /* Don't stretch buttons */
+    min-width: auto; /* Allow natural width */
 }
 
 .filter-controls button:hover {
@@ -176,15 +220,24 @@ main {
 }
 
 .filter-controls button.active {
-    background-color: #4299e1;
+    background-color: #2c5282; /* Darker blue for better contrast with white text */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid white; /* Indicate active state */
 }
 
 /* Footer Adjustments */
 footer {
-    margin-top: 2rem;
+    margin-top: 3rem; /* Increased margin for better spacing */
     background-color: #1a365d;
     color: white;
     text-align: center;
-    padding: 1.5rem;
+    padding: 2rem 1.5rem; /* Increased padding for better spacing */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    border-top: 4px solid #2c5282; /* Consistent border style */
+}
+
+footer p {
+    margin: 0.7rem 0; /* Consistent spacing */
+    font-size: 1.1rem; /* Increased font size */
+    letter-spacing: 0.5px; /* Improved typography */
 }

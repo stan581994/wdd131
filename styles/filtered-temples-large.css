@@ -6,12 +6,13 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1rem 2rem;
+        padding: 1.5rem 2.5rem; /* Increased padding for better spacing */
         flex-direction: row;
     }
     
     header h1 {
         margin-bottom: 0;
+        font-size: 2.2rem; /* Larger font size for desktop */
     }
     
     /* Hide Hamburger Button on Large Screens */
@@ -27,33 +28,58 @@
         margin-left: auto;
         padding: 0;
         margin-top: 0;
+        background-color: transparent; /* Remove background */
+        box-shadow: none; /* Remove shadow */
+        border-radius: 0; /* Remove border radius */
     }
     
     #primaryNav a {
         border-bottom: none;
         width: auto;
+        margin: 0 0.3rem; /* Add spacing between items */
+        padding: 0.6rem 1.2rem; /* Adjust padding */
+        border-radius: 4px; /* Add border radius */
+        transition: all 0.3s ease; /* Smooth transition */
+    }
+    
+    #primaryNav a:hover {
+        background-color: rgba(255, 255, 255, 0.15); /* Lighter hover effect */
+        transform: translateY(-2px); /* Slight lift effect */
     }
     
     /* Main Content Adjustments */
     main h2 {
         font-size: 2.2rem;
-        margin: 2rem 0;
+        margin: 1rem 0 2rem; /* Adjusted margins */
         grid-column: 1 / -1; /* Make h2 span all columns */
     }
     
     /* Filter Controls for Large Screens */
     .filter-controls {
-        flex-direction: row;
         justify-content: center;
-        flex-wrap: wrap;
+        gap: 1rem; /* Consistent gap */
+        padding: 1.2rem 2rem; /* Horizontal padding */
+        max-width: 1200px; /* Match main content width */
+        margin: 1.5rem auto 3rem; /* More space below filters */
+    }
+    
+    .filter-controls button {
+        flex: 0 1 auto; /* Don't stretch buttons */
+        min-width: 150px; /* Wider buttons on desktop */
+        padding: 0.8rem 1.5rem; /* Larger padding */
+        font-size: 1.1rem; /* Larger font */
     }
     
     /* Temple Card Grid Layout - Multiple Columns */
-    main {
+    #templeCards {
         grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
         gap: 2.5rem; /* Increased gap */
-        padding: 2rem; /* Increased padding */
         max-width: 1200px; /* Increased max-width */
+        margin: 0 auto; /* Center the grid */
+    }
+    
+    main {
+        padding: 2rem; /* Increased padding */
     }
     
     /* Larger temple cards for medium screens */
@@ -67,15 +93,46 @@
 }
 
 @media screen and (min-width: 1024px) {
+    /* Header Adjustments */
+    header {
+        padding: 1.5rem 3rem; /* More padding on larger screens */
+    }
+    
+    header h1 {
+        font-size: 2.4rem; /* Even larger font size */
+    }
+    
+    /* Main Content Adjustments */
+    main h2 {
+        font-size: 2.5rem; /* Larger heading */
+        margin: 1.5rem 0 2.5rem; /* Adjusted spacing for filter controls */
+    }
+    
+    main h2::after {
+        width: 120px; /* Wider underline */
+        height: 4px; /* Thicker underline */
+    }
+    
     /* Temple Card Grid Layout - 3 Columns for Large Screens */
-    main {
+    #templeCards {
         grid-template-columns: repeat(3, 1fr);
         max-width: 1400px; /* Increased max-width */
+        gap: 2.5rem; /* Consistent gap */
+    }
+    
+    main {
+        padding: 2.5rem; /* More padding */
     }
     
     /* Larger temple cards for large screens */
     .temple-card {
         min-height: 480px; /* Increased minimum height */
+        transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smoother transition */
+    }
+    
+    .temple-card:hover {
+        transform: translateY(-8px); /* More pronounced hover effect */
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow */
     }
     
     .temple-card img {
@@ -84,23 +141,41 @@
     
     .temple-name {
         font-size: 1.5rem; /* Increased font size */
+        margin-bottom: 1rem; /* More spacing */
     }
     
     .temple-location {
         font-size: 1.2rem; /* Increased font size */
+        margin-bottom: 1rem; /* More spacing */
     }
     
     .temple-dedicated, .temple-area {
         font-size: 1.1rem; /* Increased font size */
+        margin-bottom: 0.7rem; /* More spacing */
+    }
+    
+    /* Filter Controls */
+    .filter-controls {
+        padding: 2rem; /* More padding */
+        margin-bottom: 3rem; /* More spacing */
     }
 }
 
 @media screen and (min-width: 1440px) {
+    /* Header Adjustments */
+    header {
+        padding: 1.5rem 4rem; /* Even more padding */
+    }
+    
     /* Temple Card Grid Layout - 4 Columns for Extra Large Screens */
-    main {
+    #templeCards {
         grid-template-columns: repeat(4, 1fr);
         max-width: 1800px; /* Increased max-width */
         gap: 3rem; /* Increased gap */
+    }
+    
+    main {
+        padding: 3rem; /* More padding */
     }
     
     /* Larger temple cards for extra large screens */
@@ -110,5 +185,10 @@
     
     .temple-card img {
         height: 320px; /* Increased image height */
+    }
+    
+    /* Filter Controls */
+    .filter-controls {
+        max-width: 1000px; /* Wider on large screens */
     }
 }

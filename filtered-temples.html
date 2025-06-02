@@ -19,17 +19,16 @@
     <header>
         <h1>Filtered Temple Album</h1>
         <button id="hamburgerBtn" aria-expanded="false" aria-controls="primaryNav">☰</button>
-        <nav id="primaryNav">
-            <a href="index.html">Home</a>
-            <a href="temples.html">All Temples</a>
-            <a href="#">Old</a>
-            <a href="#">New</a>
-            <a href="#">Large</a>
-            <a href="#">Small</a>
-        </nav>
     </header>
     <main id="templeCards">
         <h2>Temple Images</h2>
+        <div class="filter-controls">
+            <button id="allButton" class="active">All Temples</button>
+            <button id="oldButton">Pre-2000 Temples</button>
+            <button id="newButton">Post-2000 Temples</button>
+            <button id="largeButton">Large Temples (>50,000 sq ft)</button>
+            <button id="smallButton">Small Temples (<50,000 sq ft)</button>
+        </div>
         <!-- Temple cards will be dynamically generated here using JavaScript -->
     </main>
     <footer>
