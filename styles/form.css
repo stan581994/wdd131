@@ -1,0 +1,383 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Base styles for the form */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color palette - limited to 5 hues */
+    --primary-color: #3a6ea5;      /* Deep blue - primary actions */
+    --secondary-color: #c0d6df;    /* Light blue - backgrounds, accents */
+    --accent-color: #ff6b6b;       /* Coral - highlights, important elements */
+    --neutral-dark: #2c3e50;       /* Dark slate - text, headings */
+    --neutral-light: #f8f9fa;      /* Off-white - backgrounds */
+    
+    /* Typography */
+    --heading-font: 'Montserrat', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: var(--neutral-dark);
+    background-color: var(--secondary-color);
+    padding: var(--spacing-lg);
+}
+
+header, footer {
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+}
+
+header h1 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+    color: var(--primary-color);
+    font-size: 2.2rem;
+}
+
+header p {
+    font-family: var(--body-font);
+    color: var(--neutral-dark);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.8;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--neutral-light);
+    padding: var(--spacing-xl);
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+fieldset {
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    transition: border-color 0.3s ease;
+}
+
+fieldset:hover, fieldset:focus-within {
+    border-color: var(--primary-color);
+}
+
+legend {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    padding: 0 var(--spacing-md);
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+    color: var(--neutral-dark);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: var(--body-font);
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(58, 110, 165, 0.3);
+}
+
+/* Validation styles */
+input.valid, select.valid, textarea.valid {
+    border-color: #2ecc71;
+    background-color: rgba(46, 204, 113, 0.05);
+}
+
+input.invalid, select.invalid, textarea.invalid {
+    border-color: var(--accent-color);
+    background-color: rgba(255, 107, 107, 0.05);
+}
+
+/* Rating stars styles */
+.rating-group {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+    justify-content: space-between;
+    max-width: 400px;
+}
+
+.rating-option {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.rating-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.rating-option label {
+    display: inline-block;
+    font-weight: normal;
+    font-size: 1.5rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+/* Star rating system */
+.rating-group {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+    max-width: 400px;
+}
+
+.rating-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.rating-option label {
+    display: inline-block;
+    font-weight: normal;
+    font-size: 1.5rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.rating-option:hover label,
+.rating-option:hover ~ .rating-option label,
+.rating-option input[type="radio"]:checked ~ .rating-option label,
+.rating-option input[type="radio"]:checked + label {
+    color: #f39c12;
+}
+
+.rating-text {
+    margin-top: var(--spacing-sm);
+    font-size: 0.9rem;
+    color: var(--neutral-dark);
+    text-align: center;
+    font-style: italic;
+}
+
+/* Checkbox styles */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-sm);
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.checkbox-option:hover {
+    background-color: rgba(192, 214, 223, 0.3);
+}
+
+.checkbox-option input[type="checkbox"] {
+    width: auto;
+    margin-right: var(--spacing-md);
+    accent-color: var(--primary-color);
+}
+
+.checkbox-option label {
+    display: inline;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+/* Submit button styles */
+.submit-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: var(--heading-font);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button:hover {
+    background-color: #2a5a8a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Review details styles */
+#reviewDetails {
+    margin-top: var(--spacing-xl);
+    text-align: left;
+    background-color: rgba(192, 214, 223, 0.2);
+    padding: var(--spacing-xl);
+    border-radius: 8px;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+#reviewDetails h3 {
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary-color);
+    text-align: center;
+    font-family: var(--heading-font);
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.review-details {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-md);
+    line-height: 1.8;
+}
+
+.review-details dt {
+    font-weight: 600;
+    color: var(--neutral-dark);
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.review-details dd {
+    margin-left: 0;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.review-details ul {
+    margin: 0;
+    padding-left: var(--spacing-xl);
+}
+
+/* Confirmation styles */
+#confirmation {
+    text-align: center;
+    padding: var(--spacing-xl);
+}
+
+#confirmation h2 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.8rem;
+}
+
+#confirmation p {
+    margin-bottom: var(--spacing-md);
+    font-size: 1.1rem;
+}
+
+#counter {
+    font-weight: 700;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+/* Footer styles */
+footer {
+    margin-top: var(--spacing-xl);
+    font-size: 0.9rem;
+    color: var(--neutral-dark);
+    opacity: 0.8;
+}
+
+footer p {
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Confirmation page link button */
+#confirmation a.submit-button {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: var(--spacing-xl);
+    text-align: center;
+    max-width: 300px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    main {
+        padding: 15px;
+    }
+    
+    fieldset {
+        padding: 10px;
+    }
+    
+    .rating-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .checkbox-group {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

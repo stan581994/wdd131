@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Product Review Form Confirmation">
+    <meta name="author" content="Your Name">
+    <title>Review Submitted - Thank You</title>
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/review.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Thank You for Your Review!</h1>
+        <p>Your feedback helps us improve our products</p>
+    </header>
+    <main>
+        <div id="confirmation">
+            <h2>Your Review Has Been Submitted</h2>
+            <p>We appreciate you taking the time to share your feedback.</p>
+            <p>You are reviewer number <span id="counter">1</span>.</p>
+            
+            <div id="reviewDetails">
+                <h3>Review Details:</h3>
+                <div id="reviewSummary">
+                    <!-- Review details will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <a href="form.html" class="submit-button">Submit Another Review</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentYear"></span> | Product Review Form | BYU-Idaho</p>
+        <p>Last Updated: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>
