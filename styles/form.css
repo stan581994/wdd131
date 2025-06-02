@@ -208,7 +208,7 @@ input.invalid, select.invalid, textarea.invalid {
 }
 
 /* Submit button styles */
-.submit-button {
+input[type="submit"], .submit-button {
     background-color: var(--primary-color);
     color: white;
     border: none;
@@ -224,13 +224,13 @@ input.invalid, select.invalid, textarea.invalid {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.submit-button:hover {
+input[type="submit"]:hover, .submit-button:hover {
     background-color: #2a5a8a;
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-.submit-button:active {
+input[type="submit"]:active, .submit-button:active {
     transform: translateY(0);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
