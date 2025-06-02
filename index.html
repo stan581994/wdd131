@@ -3,60 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WDD 131 – Dynamic Web Fundamentals - Steven Tan - A collection of web development projects and exercises focusing on dynamic web content creation">
-    <meta name="author" content="Steven Tan">
-    <title>WDD 131 – Dynamic Web Fundamentals - Steven Tan</title>
+    <title>Mindful Habits Tracker - Build Better Daily Habits</title>
+    <meta name="description" content="Track and develop small daily habits for better physical and mental health with the Mindful Habits Tracker.">
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/base.css">
-    <script src="scripts/getdates.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans:wght@400;600&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>WDD 131 – Dynamic Web Fundamentals</h1>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Mindful Habits Tracker Logo" class="logo">
+            <h1>Mindful Habits Tracker</h1>
+        </div>
         <nav>
-            <a href="https://www.linkedin.com/in/steven-tan-219212160/">LinkedIn</a>
-            <a href="https://byupw.instructure.com/">Canvas</a>
-            <a href="https://www.churchofjesuschrist.org/study/scriptures/nt/1-jn/4?lang=eng&id=p19#p19">Scripture</a>
-            <a href="final-project/">Final Project</a>
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="tracker.html">Habit Tracker</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
         </nav>
     </header>
+
     <main>
-        <section class="card about-me">
-            <h2>About Me</h2>
-            <div class="card-content">
-                <img src="images/Steven%20Tan.png" alt="Steven Tan profile picture">
-                <p>Hello! My name is Steven Tan and I am from the Philippines. I enjoy watching movies and learning about technology. I am fascinated by how software is created nowadays and dream of becoming a professional programmer someday.</p>
-            </div>
-            <div class="hobby">
-                <img src="images/book.jpg" alt="Non-fiction book">
-                <p>I also have a passion for reading non-fiction books. My goal is to become a lifetime learner and continuously add to my knowledge. Reading helps me explore new ideas and perspectives.</p>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Small Habits, Big Impact</h2>
+                <p>Build a healthier mind and body through simple, consistent daily practices.</p>
+                <a href="tracker.html" class="btn btn-primary">Start Tracking</a>
             </div>
         </section>
-        <section class="card projects">
-            <h2>WDD 131 Projects</h2>
-            <div class="card-content">
-                <p>This page showcases my projects for the WDD 131 - Dynamic Web Fundamentals course. Throughout this course, I will be learning about creating dynamic web content using JavaScript and other web technologies.</p>
-                <        <li><a href="filtered-temples.html">Filtered Temple Album</a> - An enhanced temple album with dynamic filtering capabilities</li>
-                    <li><a href="place.html">The Philippines</a> - Information about the beautiful country of the Philippines</li>
-            
-                <h3>Useful Web Development Resources</h3>
-                <ul class="resources-list">
-                    <li><a href="https://developer.mozilla.org/en-US/docs/Web">MDN Web Docs</a> - Comprehensive web development documentation</li>
-                    <li><a href="https://www.w3schools.com/">W3Schools</a> - Tutorials and references for web technologies</li>
-                    <li><a href="https://css-tricks.com/">CSS-Tricks</a> - Tips, tricks, and techniques for CSS</li>
-                    <li><a href="https://javascript.info/">JavaScript.info</a> - Modern JavaScript tutorial</li>
-                    <li><a href="https://github.com/">GitHub</a> - Code hosting platform for version control and collaboration</li>
-                    <li><a href="https://codepen.io/">CodePen</a> - Social development environment for front-end designers and developers</li>
-                    <li><a href="https://www.freecodecamp.org/">freeCodeCamp</a> - Learn to code for free</li>
-                </ul>
+
+        <section class="intro">
+            <div class="container">
+                <div class="intro-text">
+                    <h2>Welcome to Mindful Habits</h2>
+                    <p>The journey to better health and wellbeing doesn't require massive changes. Research shows that small, consistent habits can lead to significant improvements in your physical and mental health over time.</p>
+                    <p>Mindful Habits Tracker helps you build and maintain these small but powerful daily routines that contribute to your overall wellness.</p>
+                </div>
+                <div class="featured-habits">
+                    <h3>Popular Habits to Track</h3>
+                    <div class="habits-grid">
+                        <div class="habit-card">
+                            <i class="fas fa-glass-water habit-icon"></i>
+                            <h4>Water Intake</h4>
+                            <p>Stay hydrated throughout the day</p>
+                        </div>
+                        <div class="habit-card">
+                            <i class="fas fa-bed habit-icon"></i>
+                            <h4>Sleep Quality</h4>
+                            <p>Track your sleep patterns</p>
+                        </div>
+                        <div class="habit-card">
+                            <i class="fas fa-person-walking habit-icon"></i>
+                            <h4>Daily Movement</h4>
+                            <p>Regular physical activity</p>
+                        </div>
+                        <div class="habit-card">
+                            <i class="fas fa-book habit-icon"></i>
+                            <h4>Reading Time</h4>
+                            <p>Feed your mind daily</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits">
+            <div class="container">
+                <h2>Benefits of Mindful Habits</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <i class="fas fa-brain benefit-icon"></i>
+                        <h3>Improved Mental Clarity</h3>
+                        <p>Small daily habits like meditation and mindful breaks can significantly improve focus and mental clarity.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-heart-pulse benefit-icon"></i>
+                        <h3>Better Physical Health</h3>
+                        <p>Consistent habits like staying hydrated, moving regularly, and stretching contribute to better overall physical health.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-face-smile benefit-icon"></i>
+                        <h3>Enhanced Mood</h3>
+                        <p>Regular mindful practices have been shown to reduce stress and improve emotional wellbeing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2>Success Stories</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial">
+                        <p>"After just 30 days of tracking my water intake and meditation, I noticed a significant improvement in my energy levels and focus."</p>
+                        <p class="testimonial-author">- Jamie S.</p>
+                    </div>
+                    <div class="testimonial">
+                        <p>"The visual progress tracking helped me stay motivated with my daily stretching routine. Now it's just part of my day!"</p>
+                        <p class="testimonial-author">- Alex T.</p>
+                    </div>
+                    <div class="testimonial">
+                        <p>"I've tried many habit trackers, but this one's simplicity and focus on mindfulness made all the difference for me."</p>
+                        <p class="testimonial-author">- Morgan P.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to Build Better Habits?</h2>
+                <p>Start your journey to better wellbeing today with our simple habit tracking tool.</p>
+                <a href="tracker.html" class="btn btn-accent">Get Started Now</a>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About This Project</h2>
+                <p>I created the Mindful Habits Tracker because I've been trying to build better daily habits to improve my own physical and mental well-being. This project is a way for me to apply what I've learned in web development while also designing a tool that helps me stay consistent with small, meaningful routines like drinking water, stretching, and getting enough sleep.</p>
+                <p>The website features a home page introducing mindful daily habits, a dynamic habit tracker with progress saving and user input, and a reference page with additional resources. All built with responsive design and interactive JavaScript to promote wellness and healthy routines.</p>
             </div>
         </section>
     </main>
+
     <footer>
-        <p>&copy; <span id="currentyear"></span> Steven Tan. Philippines</p>
-        <p id="lastModified"></p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo-small.png" alt="Mindful Habits Tracker Logo" class="logo-small">
+                    <p>Mindful Habits Tracker</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tracker.html">Habit Tracker</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact</h3>
+                    <p>Questions or feedback? Reach out to us!</p>
+                    <a href="mailto:contact@mindfulhabits.org" class="contact-link">contact@mindfulhabits.org</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mindful Habits Tracker. All rights reserved.</p>
+                <p>Created for WDD 131 Project</p>
+            </div>
+        </div>
     </footer>
+
+    <script src="scripts/app.js"></script>
 </body>
 </html>
