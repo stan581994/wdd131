@@ -1,0 +1,211 @@
+/* 
+ * Mindful Habits Tracker - Responsive Stylesheet
+ * This file contains the responsive styles for the Mindful Habits Tracker website.
+ */
+
+/* ===== Mobile First Approach ===== */
+/* Base styles are in styles.css and are designed for mobile devices */
+
+/* ===== Small devices (landscape phones, 576px and up) ===== */
+@media (min-width: 576px) {
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
+  
+  .habits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== Medium devices (tablets, 768px and up) ===== */
+@media (min-width: 768px) {
+  html {
+    font-size: 17px;
+  }
+  
+  .hero h2 {
+    font-size: 3rem;
+  }
+  
+  .hero p {
+    font-size: 1.3rem;
+  }
+  
+  .habits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .tips-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .reading-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===== Large devices (desktops, 992px and up) ===== */
+@media (min-width: 992px) {
+  html {
+    font-size: 18px;
+  }
+  
+  .habits-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .welcome .container {
+    flex-wrap: nowrap;
+  }
+  
+  .resource-content {
+    flex-wrap: nowrap;
+  }
+}
+
+/* ===== Extra large devices (large desktops, 1200px and up) ===== */
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 var(--spacing-xl);
+  }
+}
+
+/* ===== Mobile Menu Styles ===== */
+@media (max-width: 767px) {
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .logo {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  nav {
+    width: 100%;
+    display: none; /* Hidden by default, shown when mobile menu is toggled */
+  }
+  
+  nav.active {
+    display: block;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  nav li {
+    margin: 0;
+    border-bottom: 1px solid var(--color-light-gray);
+  }
+  
+  nav a {
+    display: block;
+    padding: var(--spacing-md) 0;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+  }
+  
+  /* Adjust section padding for mobile */
+  .hero,
+  .welcome,
+  .benefits,
+  .testimonials,
+  .cta,
+  .tracker-header,
+  .habit-tracker,
+  .statistics,
+  .resources-header,
+  .habit-science,
+  .habit-categories,
+  .habit-tips,
+  .further-reading {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  /* Adjust grid layouts for mobile */
+  .habits-grid,
+  .benefits-grid,
+  .stats-container,
+  .habit-list,
+  .tips-grid,
+  .reading-list {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  /* Adjust form actions for mobile */
+  .form-actions {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .form-actions button {
+    width: 100%;
+  }
+  
+  /* Adjust modal for mobile */
+  .modal-content {
+    margin: 5% auto;
+    padding: var(--spacing-lg);
+    width: 90%;
+  }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+    font-size: 12pt;
+  }
+  
+  header, footer, .cta, .mobile-menu-toggle {
+    display: none;
+  }
+  
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .hero, .tracker-header, .resources-header {
+    background-color: white;
+    color: black;
+    padding: 1cm 0;
+  }
+  
+  .hero h2, .tracker-header h2, .resources-header h2 {
+    color: black;
+  }
+  
+  .habit-card, .benefit-card, .testimonial-card, .stats-card, .habit-info, .tip-card, .book-card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  
+  .habits-grid, .benefits-grid, .stats-container, .habit-list, .tips-grid, .reading-list {
+    page-break-inside: avoid;
+  }
+}
